@@ -1,0 +1,11 @@
+{
+  "name": "timaskipulagsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
