@@ -8,6 +8,7 @@ function mapf(n,start1,stop1,start2,stop2){
 let minHours;
 let maxHours;
 get_times()
+setInterval(get_times,3000)
 
 
 let days = ['sunnudagur','mánudagur','þriðjudagur','miðvikudagur','fimmtudagur','föstudagur','laugardagur']
