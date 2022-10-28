@@ -5,6 +5,11 @@ function mapf(n,start1,stop1,start2,stop2){
     return newval
 }
 
+let minHours;
+let maxHours;
+get_times()
+
+
 let days = ['sunnudagur','mánudagur','þriðjudagur','miðvikudagur','fimmtudagur','föstudagur','laugardagur']
 
 function refreshTime() {
@@ -27,8 +32,6 @@ dateDisplay.textContent = d.toLocaleDateString()
 
 
 function refreshTimeLine(){
-    let minHours = 19;
-    let maxHours = 23;
     let d = new Date();
     let dec = d.getMinutes()/60;
     let currentPos = d.getHours() + dec;
@@ -41,5 +44,18 @@ function refreshTimeLine(){
     hr.style.top = newPos + 'px';
 
 }
-
 setInterval(refreshTimeLine, 1000);
+
+function get_times(){
+    let els = document.getElementsByClassName('item-time');
+    let times = [];
+    for(let el of els){
+        let [hr,mn] = el.textContent.split(':')
+        let dc = parseFloat(mn)/60;
+        times.push(parseFloat(hr)+dc)
+    }
+    console.log(times)
+    minHours = Math.min(...times)
+    maxHours = Math.max(...times) + 1
+    console.log(minHours,maxHours)
+}
